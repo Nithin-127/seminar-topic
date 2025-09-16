@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid & Semantic UI Example</title>
+
+    <!--
+    This link to Semantic UI's CSS framework is necessary for the Semantic UI buttons
+    to display their intended styles. Please note that this link is NOT
+    provided in the original sources but is standard practice when using Semantic UI.
+    You may want to independently verify this CDN link.
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+    <style>
+        /*
+        CSS Grid Code from sources
+        This defines a responsive grid layout.
+        */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+            grid-template-rows: auto;
+            gap: 15px; /* Gap between grid items */
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin-bottom: 30px;
+        }
+        /* Grid Items spanning specific columns */
+        .grid-item-4 {
+            grid-column: span 4;
+            background-color: #aed6f1; /* Added for visual clarity */
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .grid-item-8 {
+            grid-column: span 8;
+            background-color: #f5b7b1; /* Added for visual clarity */
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+            .grid-item-4,
+            .grid-item-8 {
+                grid-column: span 1; /* Items span full width on small screens */
+            }
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .buttons-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #e6ffe6;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .buttons-container .ui.button,
+        .buttons-container .ui.labeled.icon.button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Grid Framework Example</h1>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+        This section demonstrates a responsive 12-column CSS Grid layout. The CSS Grid framework provides a pre-built system for responsive grid-based layout structures.
+        On screens smaller than 768px, the items will stack vertically due to the responsive design media query.
+    </p>
+
+    <div class="grid-container">
+        <div class="grid-item-4">Item 1 (Span 4)</div>
+        <div class="grid-item-8">Item 2 (Span 8)</div>
+        <div class="grid-item-4">Item 3 (Span 4)</div>
+        <div class="grid-item-4">Item 4 (Span 4)</div>
+        <div class="grid-item-4">Item 5 (Span 4)</div>
+    </div>
+
+    <h1>Semantic UI Button Example</h1>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+        This section showcases various button styles from Semantic UI. Semantic UI is a modern CSS framework using natural language principles and human-readable class names for intuitive HTML and pre-styled components.
+    </p>
+
+    <div class="buttons-container">
+        <!-- Semantic UI Button Code from sources -->
+        <button class="ui button">Follow</button>
+        <button class="ui primary button">Save</button>
+        <button class="ui secondary button">Discard</button>
+        <button class="ui icon button">
+            <i class="pause icon"></i>
+        </button>
+        <button class="ui labeled icon button">
+            <i class="pause icon"></i>
+            Pause
+        </button>
+    </div>
+
+    <h3 style="margin-top: 50px;">Note on External Frameworks:</h3>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+        CSS Grid is a native browser feature for layout. Semantic UI, however, is a framework that requires its own CSS files to be linked in the HTML document to apply its predefined styles to elements like buttons. The CDN link included in the `&lt;head&gt;` section facilitates this, as the provided sources only show examples of using Semantic UI classes, not the full framework's CSS.
+    </p>
+
+</body>
+</html>
